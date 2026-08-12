@@ -10,6 +10,7 @@ use Tests\Fixtures\SomeEnum;
 use Tests\Fixtures\Typed;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
+use Tests\Fixtures\DefaultValue;
 
 #[CoversClass(ArgsParser::class)]
 final class ArgsParserTest extends TestCase
@@ -61,5 +62,14 @@ final class ArgsParserTest extends TestCase
             'Alice',
             '--active',
         ], Simple::class);
+    }
+
+    public function testDefaultValueIsUsedWhenArgumentIsNotProvided(): void
+    {
+        $parsed = ArgsParser::parse([
+            'script.php',
+        ], DefaultValue::class);
+
+        $this->assertSame('default name', $parsed->name);
     }
 }

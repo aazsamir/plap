@@ -64,6 +64,10 @@ class ArgsParser
                 throw new \InvalidArgumentException("Missing required argument: --{$argDefinition->name}");
             }
 
+            if ($value === null && $argDefinition->default !== null) {
+                continue;
+            }
+
             if ($value !== null) {
                 $value = $this->coerceType($value, $argDefinition->type);
             }
