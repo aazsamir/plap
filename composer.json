@@ -1,0 +1,19 @@
+{
+    "name": "aazsamir/plap",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Aazsamir\\Plap\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "aazsamir",
+            "email": "sutikkukun@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "symfony/var-dumper": "^8.1"
+    }
+}
